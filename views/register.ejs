@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main1.css">
+    <title>Register</title>
+</head>
+<body>
+    <nav>
+        
+    </nav>
+    <div class="container">  
+        <h1>Create Your Account  </h1>
+        <form method="POST" action="/register" enctype="multipart/form-data">
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+            <br>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+            <br>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+            <br>
+            <input type="file" id="image" name="image" accept="image/*" required class="custom-file-input">
+            <label class="custom-file-label" for="image">Choose a File</label>
+            <br>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+    </div>
+</body>
+</html>

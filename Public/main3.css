@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&family=Oswald:wght@300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+   
+}
+
+
+.container {
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    color: white;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+    padding: 10px 150px;
+}
+
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    /* background-color: red; */
+
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: black;
+}
+
+
+#logo {
+    width: 130px;
+    height: 70px;
+}
+
+#prof-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+
+}
+
+
+.profile {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    width: 30%;
+}
+
+.profile p {
+    color: black;
+}
+
+
+
+.form-container {
+    background-color: #ededed;
+    width: 100%;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.form {
+    /* background: linear-gradient(90deg, #9baaf7, #8497f6); */
+    background-color: rgb(37, 124, 255, 0.1);
+    width: 80%;
+    margin-top: 20px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+
+}
+
+form {
+    width: 80%;
+}
+
+
+.heading1 {
+    font-size: 50px;
+    color: black;
+}
+
+#name, #email,  #age, #salary, #password {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    background: rgb(255, 255, 255,s);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+
+#content {
+    height: 300px;
+    overflow-y: auto;
+}
+
+
+
+#addBlog {
+    border: none;
+    outline: none;
+    padding: 10px 40px;
+    margin-top: 30px;
+    border-radius: 30px;
+    background-color: #257CFF;
+    color: white;
+    cursor: pointer;
+    transition: 0.1s all ease;
+}
+
+
+#addBlog:hover{
+    transform: scale(1.1);
+    background: #F45A2A;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+.added-blogs {
+    background-color: #ededed;
+    width: 100%;
+    /* padding: 100px 100px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+
+.added-blogs h1 {
+    font-size: 50px;
+}
+
+
+.card {
+    width: 70%;
+    margin: 20px 0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.blog-content {
+    width: 100%;
+    margin-bottom: 10px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: column; */
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+
+}
+
+.blog-content p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#blog-img {
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+
+.headers {
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
+}
+
+.headers h2 {
+    font-size: 20px;
+}
+
+.headers p {
+    font-size: 15px;
+}
+
+.headers h4 {
+    font-size: 12px;
+}
+
+
+.cta {
+    width: 50%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cta a {
+    text-decoration: none;
+    background-color: #257CFF;
+    padding: 7px 25px;
+    border-radius: 20px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s all ease;
+    /* width: 30%;  */
+}
+
+
+
+.cta a:hover{
+    transform: scale(1.2);
+    background: #F45A2A;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+.foot {
+    width: 100%;
+    height: 200px;
+    padding: 30px 240px;
+    background-color: rgb(121, 121, 121);
+    display: flex;
+    justify-content: space-around;
+}
+
+.about-us {
+    padding-right:60px;
+    width: 50%;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: white;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+}
