@@ -16,7 +16,7 @@ body {
    
 }
 
-/* ---------------------------Start of Navigation--------------------------- */
+/* ---------------------------------------Navigation start-------------------------- */
 
 .container {
     background-color: white;
@@ -69,7 +69,9 @@ body {
     color: black;
 }
 
-/* ---------------------------End of Navigation--------------------------- */
+/* ---------------------------------------Navigation End-------------------------- */
+
+
 
 
 
@@ -149,10 +151,6 @@ form {
 
 
 
-
-
-/* ---------------------------------Added Users-------------------------------- */
-
 .added-blogs {
     background-color: #ededed;
     width: 100%;
@@ -168,31 +166,6 @@ form {
 .added-blogs h1 {
     font-size: 50px;
 }
-
-
-
-.added-blogs .sort {
-    width: 30%;
-    display: flex;
-    justify-content: space-around;
-    /* background-color: red; */
-}
-
-
-
-
-.added-blogs .sort a {
-    text-decoration: none;
-    background-color: #257CFF;
-    padding: 3px 25px;
-    border-radius: 20px;
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.2s all ease;
-}
-
-
 
 
 .card {
@@ -226,16 +199,17 @@ form {
     text-overflow: ellipsis;
 }
 
-#user-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+#blog-img {
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
 }
 
 
 .headers {
     width: 100%;
     display: flex;
+    /* flex-direction: column; */
     gap: 10px;
 }
 
@@ -253,7 +227,7 @@ form {
 
 
 .cta {
-    width: 70%;
+    width: 50%;
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
@@ -279,13 +253,12 @@ form {
     color: black;
     font-weight: bold;
 }
-/* ---------------------------------Added Users-------------------------------- */
 
 
 
 
+/* ----------------------------------Footer Start--------------------------- */
 
-/* ---------------------------Start of Footer--------------------------- */
 
 .foot {
     width: 100%;
@@ -317,4 +290,4 @@ form {
     color: white;
     font-size: 13px;
 }
-/* ---------------------------End of Footer--------------------------- */
+/* ----------------------------------Footer End--------------------------- */

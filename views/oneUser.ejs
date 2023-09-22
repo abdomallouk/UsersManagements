@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main4.css">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container" > 
+        <nav class="nav-bar">
+            <img src="../logo.png" id="logo" alt="">
+            <a href="/allBlogs">Home</a>
+            <a href="/allBlogs">All Users</a>
+            <a href="#">About Us</a>
+            <div class="profile">
+                <img src="#" id="prof-img" alt="">
+                <p>abdo</p>
+            </div>            
+        </nav>
+    </div>
+
+
+
+
+
+
+    <div class="form-container">  
+        <h1 class="heading1">Add new User</h1>
+        <div class="form"> 
+            <form action="/updatedUser?id=<%= oneUser._id %>" method="POST" >
+                <input type="text" id="name" name="name" required placeholder="Enter User name " value=" <%=oneUser.name %>" >
+                <br>
+                <input type="text" id="email" name="email" required placeholder="Enter User email"   value=" <%=oneUser.email %>">
+                <br>
+                <input type="text" id="age" name="age" required placeholder="Enter User age "  value=" <%=oneUser.age%>">
+                <br>
+                <input type="text" id="salary" name="salary" required placeholder="Enter User salary " value=" <%=oneUser.salary %>">
+                <br>
+                <br>            
+                <input type="submit" value="Update User" id="addBlog">
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+
+    <footer class="foot">
+        <img src="../logo.png" alt="">
+
+        <div class="about-us">
+            <p>Travler is your ultimate online destination for all things travel. Founded in 2016 by a group of passionate globetrotters, this website has since become a trusted resource for wanderers, adventurers, and travel enthusiasts worldwide.
+            </p>
+        </div>
+
+        <div class="links">
+            <h3>Quick Links</h3>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & conditions </a>
+            <a href="#">Services </a>
+
+        </div>
+    </footer>
+
+
+
+</body>
+</html>

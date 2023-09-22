@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/main3.css">
-    <script src="/script3.js" defer></script>
-    <title>AddBlog</title>
+    <link rel="stylesheet" href="/main5.css">
+
+    <title>Document</title>
 </head>
 <body>
 
+    
     <div class="container" > 
         <nav class="nav-bar">
             <img src="../logo.png" id="logo" alt="">
@@ -18,63 +19,19 @@
             <div class="profile">
                 <img src="#" id="prof-img" alt="">
                 <p>abdo</p>
-            </div>
-            
+            </div>            
         </nav>
     </div>
 
 
 
-    <div class="form-container">  
-        <h1 class="heading1">Add new User</h1>
-        <div class="form"> 
-            <form action="/addUser" method="POST"  enctype="multipart/form-data">
-                <input type="text" id="name" name="name" required placeholder="Enter User name ">
-                <br>
-                <input type="text" id="email" name="email" required placeholder="Enter User email ">
-                <br>
-                <input type="text" id="age" name="age" required placeholder="Enter User age ">
-                <br>
-                <input type="text" id="salary" name="salary" required placeholder="Enter User salary ">
-                <br>
-                <input type="password" id="password" name="password" required placeholder="Enter User password ">
-                <br>
-
-                <label for="adminRole">Role in the Company:</label>
-                <br>
-                <input type="radio" id="adminRole" name="role" value="admin">
-                <label for="adminRole">Admin</label>
-                <br>
-                <input type="radio" id="userRole" name="role" value="user">
-                <label for="userRole">User</label>
-                <br>
-                <br>
-
-                <label for="status">Account Status:</label>
-                <br>
-                <input type="radio" id="verified" name="status" value="verified">
-                <label for="status">Verified</label>
-                <br>
-                <input type="radio" id="notVerified" name="status" value="notVerified">
-                <label for="status">Not Verified</label>
-                <br>
-                <input type="file" id="image" name="image" accept="image/*" required>
-                <br>            
-                <input type="submit" value="Add-User" id="addBlog">
-            </form>
-        </div>
-
-    </div>
-
 
     <div class="added-blogs">
-        <h1>All Added Users </h1>
+        <h1>Sorted Users by Salary  </h1>
         <div class="sort">
-            <a href="/sortByAge"> Sort By Age</a>
-            <a href="/sortBySalary"> Sort By Salary</a>
-            <a href="/search"> Search for Users</a>
+            <a href="/addUser"> Return </a>
         </div>
-
+        
         <div class="card">  
             <%  allUsers.forEach(u => { %>
                 <div  id="card-<%=u._id %>" class="blog-content">
@@ -118,6 +75,7 @@
 
         </div>
     </footer>
+
 
 
 </body>

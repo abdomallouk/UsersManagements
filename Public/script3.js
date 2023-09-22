@@ -27,3 +27,30 @@ deleteButtons.forEach(button => {
     });
 });
 
+
+
+
+
+
+
+const sendButtons = document.querySelectorAll('.send-info');
+
+sendButtons.forEach(button => {
+    button.addEventListener('click', e => {
+    e.preventDefault();
+        
+    const userId = button.getAttribute('data-userId');
+
+    fetch(`/sendInfo/${userId}`, {
+        method: 'GET',
+    })
+        .then(response => {
+            console.log(response)
+        }
+        )
+        .catch(error => {
+        console.error('Error Sending info:', error);
+        });
+    });
+});
+

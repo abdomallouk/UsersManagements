@@ -36,7 +36,7 @@ exports.isAuthenticated = (req, res, next) => {
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, './public/uploads')
+      cb(null, './Public/uploads')
     },
     filename: function (req, file, cb) {
       cb(null, file.originalname)

@@ -16,7 +16,7 @@ body {
    
 }
 
-/* ---------------------------Start of Navigation--------------------------- */
+/* ---------------------------------------Navigation start-------------------------- */
 
 .container {
     background-color: white;
@@ -69,83 +69,7 @@ body {
     color: black;
 }
 
-/* ---------------------------End of Navigation--------------------------- */
-
-
-
-
-
-.form-container {
-    background-color: #ededed;
-    width: 100%;
-    padding: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.form {
-    /* background: linear-gradient(90deg, #9baaf7, #8497f6); */
-    background-color: rgb(37, 124, 255, 0.1);
-    width: 80%;
-    margin-top: 20px;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
-
-}
-
-form {
-    width: 80%;
-}
-
-
-.heading1 {
-    font-size: 50px;
-    color: black;
-}
-
-#name, #email,  #age, #salary, #password {
-    border: none;
-    outline: none;
-    width: 100%;
-    padding: 10px;
-    background: rgb(255, 255, 255,s);
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
-
-
-#content {
-    height: 300px;
-    overflow-y: auto;
-}
-
-
-
-#addBlog {
-    border: none;
-    outline: none;
-    padding: 10px 40px;
-    margin-top: 30px;
-    border-radius: 30px;
-    background-color: #257CFF;
-    color: white;
-    cursor: pointer;
-    transition: 0.1s all ease;
-}
-
-
-#addBlog:hover{
-    transform: scale(1.1);
-    background: #F45A2A;
-    color: black;
-    font-weight: bold;
-}
+/* ---------------------------------------Navigation End-------------------------- */
 
 
 
@@ -168,31 +92,6 @@ form {
 .added-blogs h1 {
     font-size: 50px;
 }
-
-
-
-.added-blogs .sort {
-    width: 30%;
-    display: flex;
-    justify-content: space-around;
-    /* background-color: red; */
-}
-
-
-
-
-.added-blogs .sort a {
-    text-decoration: none;
-    background-color: #257CFF;
-    padding: 3px 25px;
-    border-radius: 20px;
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.2s all ease;
-}
-
-
 
 
 .card {
@@ -236,6 +135,7 @@ form {
 .headers {
     width: 100%;
     display: flex;
+    /* flex-direction: column; */
     gap: 10px;
 }
 
@@ -285,7 +185,10 @@ form {
 
 
 
-/* ---------------------------Start of Footer--------------------------- */
+
+
+/* ----------------------------------Footer Start--------------------------- */
+
 
 .foot {
     width: 100%;
@@ -317,4 +220,4 @@ form {
     color: white;
     font-size: 13px;
 }
-/* ---------------------------End of Footer--------------------------- */
+/* ----------------------------------Footer End--------------------------- */

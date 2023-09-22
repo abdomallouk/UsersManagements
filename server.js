@@ -35,12 +35,21 @@ app.use('/', usersRouter)
 
 
 
+
+
+
+
+
+
+
+
+
 const port = process.env.PORT || 6500;
 const start = async () => {
     try{
         await connectdb(process.env.MONGO_URI);
         app.listen(port, (req, res) => {
-            console.log(`mconnecti l DB, o listening on http://localhost:${port}`);
+            console.log(`Connecting to DB, and listening on port: ${port}`);
         })
     }catch(e){
         console.log(e);
