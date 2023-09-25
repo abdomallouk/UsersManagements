@@ -111,6 +111,18 @@ body {
 /* --------------------------------- End Search bar-------------------------------- */
 
 
+
+.container2 {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 /* ----------------------------------Footer Start--------------------------- */
 
 

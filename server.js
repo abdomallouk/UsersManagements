@@ -6,7 +6,7 @@ const path = require('path');
 const cookies = require('cookie-parser')
 const connectdb = require('./db/connectdb')
 
-const registerRouter = require('./Routes/register')
+const userLoginRouter = require('./Routes/userLogin')
 const loginRouter = require('./Routes/login')
 const usersRouter = require('./Routes/users')
 
@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-app.use('/', registerRouter)
+app.use('/', userLoginRouter)
 
 
 app.use('/', loginRouter)

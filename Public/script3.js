@@ -41,11 +41,14 @@ sendButtons.forEach(button => {
         
     const userId = button.getAttribute('data-userId');
 
+    console.log(userId)
+
     fetch(`/sendInfo/${userId}`, {
         method: 'GET',
     })
         .then(response => {
-            console.log(response)
+            // console.log(response)
+            alert('The user Infomartion are Sent Successfully')
         }
         )
         .catch(error => {

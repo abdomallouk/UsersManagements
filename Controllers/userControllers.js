@@ -5,54 +5,63 @@ const jwt = require('jsonwebtoken');
 const User = require('../Models/users');
 require("dotenv").config();
 
+const nodemailer = require("nodemailer"); 
+
 // const emailS = require('emailjs')
 
 
 
 
 exports.showRegister = (req, res) => {
-    res.render('register'); 
+    res.render('userLogin'); 
   }
 
 
 
-exports.createAccount = (req, res) => {
+exports.verifyUser = async(req, res) => {
 
-    const errors = validationResult(req);
-    
-      if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-      } 
+  const {email, password}  = req.body;
+
+  console.log(email)
+  console.log(password)
+
+
+  try {
+
+    const selectedUser = await User.findOne({email: email})
+
+    console.log(selectedUser)
+
+    if(!selectedUser) {
+      return res.status(404).send('User not found');
+    } 
+
+    const userRole = selectedUser.role
+    const userStatus = selectedUser.status
+
+    console.log(userRole)
+    console.log(userStatus)
+
+    if(userRole === 'user' && userStatus ==='verified') {
+      res.render('vUserDashboard', {selectedUser})
+      // res.redirect('/vUserDashboard')
+    } else if (userRole === 'user' && userStatus ==='notVerified') {
+      res.render('notVuserDashboard', {selectedUser})
+    } else if (userRole === 'admin' && userStatus ==='verified') {
+      res.redirect('/addUser')
+    } else if (userRole === 'admin' && userStatus ==='notVerified') {
+      res.render('notVadminDashboard', {selectedUser})
+    }
+
+     
+  } catch (error) {
+    console.error('Error finding User:', error);
+    res.status(500).send('Internal Server Error');
+  }
   
-      if (!req.body.name) {
-          return res.status(400).json({
-              error: ' your data is not valid'
-          })
-      }
-    
-      const { name, email, password } = req.body;
-  
-  
-      const imagePath = `/uploads/${req.file.filename}`; 
-  
-      const newUser = {
-          name: req.body.name,
-          email: req.body.email,
-          password: req.body.password,
-          imagePath, 
-      };
-  
-      const sanitizedData = {
-        name: xss(name),
-        email: xss(email),
-        password: xss(password),
-      };
-  
-      axios.post('http://localhost:3000/users', newUser)
-  
-      res.redirect('/login')
-  
+
 }
+
 
 
 
@@ -232,40 +241,47 @@ exports.sendInfo = async(req, res) => {
   const userEmail = oneUser.email
   const userPassword = oneUser.password
 
+  console.log(userEmail)
+  console.log(userPassword)
 
 
-  const server = emailS.server.connect({
-    user: process.env.user,
-    password: process.env.password,
-    host: process.env.host,
-    ssl: process.env.ssl,
+  const transporter = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD, 
+    },
   });
-  
-  
-  
-  const sendEmail = (userEmail, hashedPassword) => {
-    const message = {
-      text: `Hello,\n\nYour email: ${userEmail}\nYour hashed password: ${hashedPassword}\n\nThank you.`,
-      from: process.env.user,
-      to: 'mallloukab77@gmail.com',
-      subject: 'Your Account Information',
-    };
-  
-    server.send(message, (err, message) => {
-      if (err) {
-        console.error('Error sending email:', err);
-      } else {
-        console.log('Email sent successfully:', message);
-      }
-    });
-  };
-  
 
-  sendEmail(userEmail, userPassword);
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: "malloukab77@gmail.com",
+    subject: "Your Account Information",
+    // text: `Hello,\n\nYour email: ${userEmail}\nYour hashed password: ${userPassword}\n\nThank you.`,
+    html: `
+    <html>
+      <body>
+        <p>Hello,</p>
+        <p>Your email: ${userEmail}</p>
+        <p>Your hashed password: ${userPassword}</p>
+        <p>Thank you.</p>
+        <a href="http://localhost:6500/userLogin" id="myProfile"> Go to my  Profile</a>
+      </body>
+    </html>
+  `,
+  };
+
+  transporter.sendMail(mailOptions, (err, info) => {
+    if (err) {
+      console.error("Error sending email:", err);
+      res.status(500).send("Internal Server Error");
+    } else {
+      console.log("Email sent successfully:", info.response);
+      res.status(200).send("Email sent successfully");
+    }
+  });
 
 }
-
-
 
 
 
@@ -317,3 +333,42 @@ exports.updatedUser = async(req, res) =>{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+ // const server = emailS.server.connect({
+  //   user: process.env.user,
+  //   password: process.env.password,
+  //   host: process.env.host,
+  //   ssl: process.env.ssl,
+  // });
+  
+  
+  
+  // const sendEmail = (userEmail, hashedPassword) => {
+  //   const message = {
+  //     text: `Hello,\n\nYour email: ${userEmail}\nYour hashed password: ${hashedPassword}\n\nThank you.`,
+  //     from: process.env.user,
+  //     to: 'mallloukab77@gmail.com',
+  //     subject: 'Your Account Information',
+  //   };
+  
+  //   server.send(message, (err, message) => {
+  //     if (err) {
+  //       console.error('Error sending email:', err);
+  //     } else {
+  //       console.log('Email sent successfully:', message);
+  //     }
+  //   });
+  // };
+  
+
+  // sendEmail(userEmail, userPassword);
